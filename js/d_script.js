@@ -23,9 +23,9 @@ loadingAnimation();
 
   // アイコンの切り替え
   if (rightBox.classList.contains('active')) {
-      menuIcon.src = 'image/close.png';
+      menuIcon.src = '../image/close.png';
   } else {
-      menuIcon.src = 'image/menu.png';
+      menuIcon.src = '../image/menu.png';
   }
 }
 
