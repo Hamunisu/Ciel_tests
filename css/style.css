@@ -35,23 +35,7 @@ body {
     background-color: whitesmoke;
 }
 
-/* LOADING */
-.loading {
-    width: 100vw;
-    height: 100vh;
-    background: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  loading__icon {
-    width: 10rem;
-    height: 10rem;
-  }
+
 
 /* ヘッダー */
 
