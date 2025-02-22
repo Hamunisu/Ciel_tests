@@ -1,3 +1,17 @@
+// indexとその他の階層が異なるためにおこるエラーを防ぐためのif
+
+function getRelativePath(fileName) {
+  // 現在のURLを取得
+  var currentPath = window.location.pathname;
+  
+  // URLに応じて相対パスを設定
+  if (currentPath.includes('sub_html')) {
+      return '../image/' + fileName;
+  } else {
+      return 'image/' + fileName;
+  }
+}
+ 
  // ハンバーガーメニューの切り替え
  function toggleMenu() {
   var rightBox = document.querySelector('.right-box');
@@ -11,8 +25,6 @@
       menuIcon.src = '../image/menu.png';
   }
 }
-
-
 
 // ---ハンバーガーメニュー---
 
