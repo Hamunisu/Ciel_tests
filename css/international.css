@@ -1,0 +1,314 @@
+@charset "UTF-8";
+
+/* 全体処理 */
+
+html {
+    font-size: 100%;
+}
+
+/* ヘッダーフォント */
+
+.heder_font {
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+}
+
+/* 日本語フォント */
+
+.japanese {
+    font-family: "M PLUS 1", serif;
+    font-optical-sizing: auto;
+}
+
+/* 英語フォント */
+
+.english {
+    font-family: "Montserrat", serif;
+        font-optical-sizing: auto;
+}
+
+
+/* ボディ */
+
+body {
+    /* 背景色 */    
+    background-color: whitesmoke;
+}
+
+/* LOADING */
+.loading {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  loading__icon {
+    width: 10rem;
+    height: 10rem;
+  }
+
+/* ヘッダー */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* 上下サイズ */
+    height: 85px;
+    /* 背景色 */
+    background-color: #212d5d;
+    /*優先度*/
+    z-index: 1000; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ロゴサイズ　変更不要 */
+
+.logo img {
+    height: 75px;
+    cursor: pointer;
+}
+
+/* ハンバーガーメニュー　変更不要 */
+.menu-icon img {
+        cursor: pointer;
+        height: 86%;
+        margin : auto;
+        position: absolute;
+        right: 15px;
+        transform: translateY(-50%);
+        z-index: 1000;
+}
+
+
+
+/* ヘッダーinfo */
+nav {
+    display: flex;
+    align-items: center;
+    margin-right: 110px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 120%;
+    padding-bottom: 3px; /* テキストと下線の間隔 */
+    background-image: linear-gradient(#ffffff, #ffffff);
+    background-repeat: no-repeat;
+    background-position: bottom right; /* 下線の初期位置 */
+    background-size: 0 1px; /* 下線のサイズ（横幅、高さ） */
+    transition: background-size 0.3s;
+}
+
+nav a:hover {
+    background-position: bottom left; /* 下線のホバー時位置 */
+    background-size: 100% 1px; /* 下線の横幅を100%にする */
+  }
+  
+/* /header */
+
+/* -------------------HM内容-------------------------- */
+
+.right-box {
+    position: fixed;
+    top: 0;
+    /* 右に隠す widthと同じ数値*/
+    right: -14%;
+     /*横幅  */
+    width: 14%;
+    height: 100%;
+    background-color: #212d5d;
+    z-index: 999;
+    /* スライドイン効果 */
+    transition: right 0.3s ease; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.right-box.active {
+    right: 0; /* メニューが押されたときに表示 */
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .menu a {
+    display: block;
+    color: white;
+    font-size: 115%;
+    text-decoration: none;
+    margin: 10%;
+    border-bottom: 1px solid #212d5d;
+    text-align: left;
+    transform: translateY(300%);
+  }
+
+  .menu a:hover {
+    text-decoration: none;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  #menu-toggle:checked + .menu-icon + .right-box {
+    right: 0; /* メニューが押されたときに表示 */
+}
+
+/* -------------/ハンバーガーメニュー--------------- */
+
+/* h1 */
+
+h1 {
+    /* 文字を中心へ */
+    text-align: center;
+     /* テキストカラー 変更不要*/
+    color: #212d5d;
+    /* テキストの太さ 変更不要*/
+    font-weight: 400;
+    /* 斜体にしない */
+    font-style: normal;
+    /* 上から何px下げるか */
+    margin-top: 95px;
+    /* フォントサイズ　変更不要 */
+    font-size: 50px;
+    /*文字周りの余白*/
+    padding: 0.5em;
+    /*テキストの背景色　変更不要*/
+    background: #d6e0ff;
+    /* ボーダーライン作成　変更不要 */
+    border-left: solid 5px #212d5d;
+  }
+  
+  /* h2 */
+
+ h2{
+    color: #212d5d;
+} 
+
+.flight_number {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid #212d5d;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 24px;
+    background-color: white;
+}
+
+/* 検索フォーム */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.textbox-container {
+    display: flex;
+    justify-content: center; /* 中央に配置 */
+    /* ボックス幅 */
+    width: 80%;
+
+    /* ボックス間の距離 */
+    gap: 10%;
+}
+
+/* 検索テキストボックス */
+.form-container input[type ="text"] {
+    /* BOX横 */
+    width: 80%;
+    /* BOX縦 */
+    padding: 5%;
+    margin-bottom: 15px;
+    background-color: white;
+    border: 2px solid #212d5d;
+    border-radius: 15px;
+    font-size: 175%;
+    color: #212d5d;
+}
+
+/* 検索ボタン */
+.form-container button {
+    padding: 1%  8%;
+    display: inline-block;
+    background: linear-gradient(to right, #212d5d 0%, #9fb3ff 45%, #ffdad1 101%);
+    background-size: 200% auto;  
+    color: white;
+    border-radius: 45px;
+    font-size: 20px;
+    transition: .5s;
+    margin: 15px;
+}
+
+.form-container button:hover {
+    color: #fff;
+    background-position: right center;
+}
+/* ----------------/form------------------ */
+
+/* 便名result */
+#result-container {
+    display: inline-block;
+    border: 2px solid #212d5d;
+    width: 50%;
+    padding: 25px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#result {
+    text-align: center;
+    font-size: 25px;
+    color: #212d5d;
+    border: #212d5d;
+}
+
+/* Simbriefボタン */
+.custom-button {
+    padding: 1%  8%;
+    display: inline-block;
+    background: linear-gradient(to right, #212d5d 0%, #9fb3ff 45%, #ffdad1 101%);
+    background-size: 200% auto;  
+    color: white;
+    border-radius: 45px;
+    font-size: 20px;
+    transition: .5s;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+.custom-button:hover {
+    color: #fff;
+    background-position: right center;
+    text-decoration: none;
+}
+
+/* フッター */
+footer {
+    background-color: white;
+    padding: 25px;
+    text-align: center;
+    border-top: 1px solid #212d5d;
+    margin-top: 25px;
+}

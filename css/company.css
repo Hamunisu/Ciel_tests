@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+/* 全体処理 */
+
+html {
+    font-size: 100%;
+}
+
+/* ヘッダーフォント */
+
+.heder_font {
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+}
+
+/* 日本語フォント */
+
+.japanese {
+    font-family: "M PLUS 1", serif;
+    font-optical-sizing: auto;
+}
+
+/* 英語フォント */
+
+.english {
+    font-family: "Montserrat", serif;
+        font-optical-sizing: auto;
+}
+
+
+/* ボディ */
+
+body {
+    /* 背景色 */    
+    background-color: whitesmoke;
+}
+
+/* LOADING */
+.loading {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  loading__icon {
+    width: 10rem;
+    height: 10rem;
+  }
+
+/* ヘッダー */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* 上下サイズ */
+    height: 85px;
+    /* 背景色 */
+    background-color: #212d5d;
+    /*優先度*/
+    z-index: 1000; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ロゴサイズ　変更不要 */
+
+.logo img {
+    height: 75px;
+    cursor: pointer;
+}
+
+/* ハンバーガーメニュー　変更不要 */
+.menu-icon img {
+        cursor: pointer;
+        height: 86%;
+        margin : auto;
+        position: absolute;
+        right: 15px;
+        transform: translateY(-50%);
+        z-index: 1000;
+}
+
+
+
+/* ヘッダーinfo */
+nav {
+    display: flex;
+    align-items: center;
+    margin-right: 110px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 120%;
+    padding-bottom: 3px; /* テキストと下線の間隔 */
+    background-image: linear-gradient(#ffffff, #ffffff);
+    background-repeat: no-repeat;
+    background-position: bottom right; /* 下線の初期位置 */
+    background-size: 0 1px; /* 下線のサイズ（横幅、高さ） */
+    transition: background-size 0.3s;
+}
+
+nav a:hover {
+    background-position: bottom left; /* 下線のホバー時位置 */
+    background-size: 100% 1px; /* 下線の横幅を100%にする */
+  }
+/* /header */
+
+/* -------------------HM内容-------------------------- */
+
+.right-box {
+    position: fixed;
+    top: 0;
+    /* 右に隠す widthと同じ数値*/
+    right: -14%;
+     /*横幅  */
+    width: 14%;
+    height: 100%;
+    background-color: #212d5d;
+    z-index: 999;
+    /* スライドイン効果 */
+    transition: right 0.3s ease; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.right-box.active {
+    right: 0; /* メニューが押されたときに表示 */
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .menu a {
+    display: block;
+    color: white;
+    font-size: 115%;
+    text-decoration: none;
+    margin: 10%;
+    border-bottom: 1px solid #212d5d;
+    text-align: left;
+    transform: translateY(300%);
+  }
+
+  .menu a:hover {
+    text-decoration: none;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+
+  #menu-toggle:checked + .menu-icon + .right-box {
+    right: 0; /* メニューが押されたときに表示 */
+}
+
+/* -------------/ハンバーガーメニュー--------------- */
+
+
+
+/* 画像コンテナ */
+.image-container {
+    display: flex;
+    margin-left: 8%;
+    width: 100%;
+    max-width: 85%;
+    margin-top: 150px;
+    overflow: hidden;
+    border: 5px solid #212d5d;
+    border-radius: 15px; 
+}
+
+/* コンテナ写真設定 */
+.image-container img {
+    justify-content: center;
+    align-items: center;
+    width: 101%;
+    height: auto;
+    object-fit: cover;
+}

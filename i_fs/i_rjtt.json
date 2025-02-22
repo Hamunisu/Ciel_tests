@@ -1,0 +1,19 @@
+{
+    "flights": [
+
+          {
+            "arrival":[],
+            "flightNumber":""
+          },
+
+          {
+            "arrival":["rjbb","kix","関西"],
+            "flightNumber":"1620\n1622\n1624\n1628\n1630"
+          },
+                
+          {
+            "arrival":["rjbe","ukb","神戸"],
+            "flightNumber":"1660\n1662"
+          }
+    ]
+}
