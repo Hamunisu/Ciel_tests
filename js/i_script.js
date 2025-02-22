@@ -1,17 +1,3 @@
-// LOADING
-function loadingAnimation() {
-    window.addEventListener('load', function() {
-        //ページ読み込み終了で非表示
-        document.querySelector(".loading").style.display = "none";
-    });
-    document.addEventListener("DOMContentLoaded", function() {
-        //5秒経過で強制的に非表示
-        setTimeout(function(){ document.querySelector(".loading").style.display = "none"}, 5000);
-    });
-  }
-  loadingAnimation();
-// /LOADING
-
  // ハンバーガーメニューの切り替え
  function toggleMenu() {
   var rightBox = document.querySelector('.right-box');
