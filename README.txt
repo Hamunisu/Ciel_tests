@@ -48,7 +48,7 @@
         コピペ推奨:
 
             <div class="image-item">
-                 <img src="/image/gallery/" alt="">
+                 <img src="../image/gallery/" alt="">
                  <p></p>
             </div>
 
@@ -56,8 +56,8 @@
         例:
 
             <div class="image-item">
-                <img src="/image/gallery/MSFS_HP_bb.png" alt="ハリーポッター関空">
-                <p>ハリーポッタージェット 関西空港上空</p>
+                <img src="../image/gallery/MSFS_HP_oo.png" alt="ハリーポッター伊丹">
+                <p>ハリーポッタージェット in大阪国際空港</p>
             </div>
 
 
