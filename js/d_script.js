@@ -96,6 +96,25 @@ function handleEnterKey(event) {
     // /北海道
     
     //東北
+    // 青森
+    else if (['rjsa','aoj','青森'].includes(departureAirport)) {
+      filePath = 'd_fs/ao/d_rjsa.json';
+    } 
+    else if (['rjsm','msj','三沢'].includes(departureAirport)) {
+      filePath = 'd_fs/ao/d_rjsm.json';
+    } 
+    // /青森
+
+
+
+
+
+
+
+
+
+
+
 
     else {
        // 全部のファイル
