@@ -44,6 +44,8 @@ function handleEnterKey(event) {
 // ---検索関連---
 
 
+
+
   // フライトプラン作成
   async function fetchFlights(departureAirport) {
     let filePath;
@@ -51,13 +53,60 @@ function handleEnterKey(event) {
     departureAirport = departureAirport.toLowerCase(); // 入力値を小文字に変換
     if (['rjtt', 'hnd','羽田'].includes(departureAirport)) {
       filePath = 'd_fs/d_rjtt.json';
-    } else if (['rjoo','itm','伊丹'].includes(departureAirport)) {
-      filePath = 'd_fs/d_rjoo.json';
-    } else {
+    } 
+    else if (['rjcw','wkj','稚内'].includes(departureAirport)) {
+      filePath = 'd_fs/hk/d_rjcw.json';
+    } 
+    else if (['rjer','ris','利尻'].includes(departureAirport)) {
+      filePath = 'd_fs/hk/d_rjer.json';
+    } 
+    else if (['rjcr','rbj','礼文'].includes(departureAirport)) {
+      filePath = 'd_fs/hk/d_rjcr.json';
+    } 
+    else if (['rjcm','mmb','女満別'].includes(departureAirport)) {
+      filePath = 'd_fs/hk/d_rjcm.json';
+    } 
+    else if (['rjck','kuh','釧路'].includes(departureAirport)) {
+      filePath = 'd_fs/hk/d_rjck.json';
+    } 
+    else if (['rjcb','obo','帯広'].includes(departureAirport)) {
+      filePath = 'd_fs/hk/d_rjcb.json';
+    } 
+    else if (['rjec','akj','旭川'].includes(departureAirport)) {
+      filePath = 'd_fs/hk/d_rjec.json';
+    } 
+    else if (['rjco','okd','丘珠'].includes(departureAirport)) {
+      filePath = 'd_fs/hk/d_rjco.json';
+    } 
+    else if (['rjcc','cts','新千歳'].includes(departureAirport)) {
+      filePath = 'd_fs/hk/d_rjcc.json';
+    }     
+    else if (['rjch','hkd','函館'].includes(departureAirport)) {
+      filePath = 'd_fs/hk/d_rjch.json';
+    } 
+    else if (['rjeo','oir','奥尻'].includes(departureAirport)) {
+      filePath = 'd_fs/hk/d_rjeo.json';
+    } 
+    else if (['rjcn','shb','中標津'].includes(departureAirport)) {
+      filePath = 'd_fs/hk/d_rjcn.json';
+    } 
+    else if (['rjeb','meb','紋別'].includes(departureAirport)) {
+      filePath = 'd_fs/hk/d_rjeb.json';
+    } 
+    // /北海道
+    
+    //東北
+
+    else {
        // 全部のファイル
       filePath = 'd_allflights.json';
     }
-  
+  // /ファイル参照
+
+
+
+
+
     // 選択されたファイルを読み込む
     const response = await fetch(filePath);
 

@@ -31,7 +31,7 @@
       },
             
       {
-        "arrival":["rjcc","cts","千歳"],
+        "arrival":["rjcc","cts","新千歳"],
         "flightNumber":"1500\n1502\n1504\n1506\n1508\n1510\n1512\n1514\n1516\n1518"
       },
       
@@ -41,7 +41,7 @@
       },
 
       {
-        "arrival":["rj","oir","奥尻"],
+        "arrival":["rjeo","oir","奥尻"],
         "flightNumber":"1586"
       },
       
@@ -79,14 +79,17 @@
         "arrival":["rjsi","hna","花巻"],
         "flightNumber":"1350"
       },      
+      
       {
         "arrival":["rjsy","syo","庄内"],
         "flightNumber":"1340"
       },      
+      
       {
         "arrival":["rjsc","gaj","山形"],
         "flightNumber":"1330"
       },      
+      
       {
         "arrival":["rjss","sdj","仙台"],
         "flightNumber":"1360\n1362\n1364\n1366\n1368"

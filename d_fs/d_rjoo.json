@@ -1,9 +1,0 @@
-{
-    "flights": [
-        {
-            "departure":[],
-            "arrival":[],
-            "flightNumber":""
-          }
-    ]
-}
