@@ -79,7 +79,7 @@ header {
 nav {
     display: flex;
     align-items: center;
-    margin-right: 110px;
+    margin-right: 6%;
 }
 
 nav a {
@@ -107,45 +107,47 @@ nav a:hover {
     position: fixed;
     top: 0;
     /* 右に隠す widthと同じ数値*/
-    right: -14%;
+    right: -20%;
      /*横幅  */
-    width: 14%;
+    width: 16%;
     height: 100%;
-    background-color: #212d5d;
+    background: linear-gradient(to bottom, #5a6fa6, #212d5d);
     z-index: 999;
     /* スライドイン効果 */
     transition: right 0.3s ease; 
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 
 .right-box.active {
     right: 0; /* メニューが押されたときに表示 */
 }
+
 .menu {
     display: flex;
     flex-direction: column;
-    padding: 15px;
     width: 100%;
   }
 
-  .menu a {
-    display: block;
-    color: white;
-    font-size: 115%;
-    text-decoration: none;
-    margin: 10%;
-    border-bottom: 1px solid #212d5d;
-    text-align: left;
-    transform: translateY(300%);
+  .sub-html {
+    width: 100%;
+    margin-top: 100%;
+    justify-items: center;
   }
 
-  .menu a:hover {
+  .sub-html a{
+    display: block;
+    color: white;
+    font-size: 200%;
+    text-decoration: none;
+    margin-top: 10%;
+    text-align: left;
+  }
+
+  .sub-html a:hover {
     text-decoration: none;
   }
-  
+
   #menu-toggle {
     display: none;
   }
@@ -154,27 +156,76 @@ nav a:hover {
     right: 0; /* メニューが押されたときに表示 */
 }
 
-/* -------------/ハンバーガーメニュー--------------- */
-
-
-
-/* 画像コンテナ */
-.image-container {
-    display: flex;
-    margin-left: 8%;
-    width: 100%;
-    max-width: 85%;
-    margin-top: 150px;
-    overflow: hidden;
-    border: 5px solid #212d5d;
-    border-radius: 15px; 
+/* アイコン切り替え */
+.menu-icon i {
+    cursor: pointer;
 }
 
-/* コンテナ写真設定 */
-.image-container img {
-    justify-content: center;
-    align-items: center;
-    width: 101%;
-    height: auto;
-    object-fit: cover;
+/* オーバーレイのスタイル */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.overlay.visible {
+    display: block;
+}
+
+/* -------------/ハンバーガーメニュー--------------- */
+
+/* h1 */
+
+h1 {
+    /* 文字を中心へ */
+    text-align: center;
+     /* テキストカラー 変更不要*/
+    color: #212d5d;
+    /* テキストの太さ 変更不要*/
+    font-weight: 400;
+    /* 斜体にしない */
+    font-style: normal;
+    /* 上から何px下げるか */
+    margin-top: 95px;
+    /* フォントサイズ　変更不要 */
+    font-size: 50px;
+    /*文字周りの余白*/
+    padding: 0.5em;
+    /*テキストの背景色　変更不要*/
+    background: #d6e0ff;
+    /* ボーダーライン作成　変更不要 */
+    border-left: solid 5px #212d5d;
+  }
+  
+  /* h2 */
+
+ h2{
+    color: #212d5d;
+} 
+
+.flight_number {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid #212d5d;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 24px;
+    background-color: white;
+}
+
+
+/* フッター */
+footer {
+    background-color: white;
+    padding: 25px;
+    text-align: center;
+    border-top: 1px solid #212d5d;
+    margin-top: 25px;
 }
