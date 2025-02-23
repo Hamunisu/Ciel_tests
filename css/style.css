@@ -47,7 +47,7 @@ header {
     /* 上下サイズ */
     height: 85px;
     /* 背景色 */
-    background-color: #212d5d;
+    background: linear-gradient(to right, #212d5d, #9fb3ff);
     /*優先度*/
     z-index: 1000; 
     display: flex;
@@ -78,8 +78,16 @@ header {
 /* ヘッダーinfo */
 nav {
     display: flex;
+    padding-right: 5%;
     align-items: center;
-    margin-right: 6%;
+    margin-right: 1%;
+}
+
+@media only screen and (max-width: 768px) {
+    nav {
+      font-size: 14px;
+      margin: 10px;
+  }
 }
 
 nav a {
@@ -136,6 +144,7 @@ nav a:hover {
     justify-items: center;
   }
 
+  /* aタグ配置 */
   .sub-html a{
     display: block;
     color: white;

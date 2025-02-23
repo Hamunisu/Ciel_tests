@@ -46,7 +46,7 @@ header {
     /* 上下サイズ */
     height: 85px;
     /* 背景色 */
-    background-color: #212d5d;
+    background: linear-gradient(to right, #212d5d, #9fb3ff);
     /*優先度*/
     z-index: 1000; 
     display: flex;
