@@ -205,10 +205,13 @@ h1 {
   /* h2 */
 
  h2{
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
     color: #212d5d;
 } 
 
 .flight_number {
+
     display: block;
     width: 80%;
     margin: 20px auto;
@@ -216,7 +219,7 @@ h1 {
     border: 2px solid #212d5d;
     text-align: center;
     border-radius: 5px;
-    font-size: 24px;
+    font-size: 30px;
     background-color: white;
 }
 
