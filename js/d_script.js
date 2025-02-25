@@ -94,8 +94,6 @@ function handleEnterKey(event) {
       filePath = 'd_fs/hk/d_rjeb.json';
     } 
     // /北海道
-    
-    //東北
     // 青森
     else if (['rjsa','aoj','青森'].includes(departureAirport)) {
       filePath = 'd_fs/ao/d_rjsa.json';
@@ -104,22 +102,19 @@ function handleEnterKey(event) {
       filePath = 'd_fs/ao/d_rjsm.json';
     } 
     // /青森
-    
     // 秋田
     else if (['rjsr','onj','大館能代'].includes(departureAirport)) {
       filePath = 'd_fs/ak/d_rjsr.json';
     } 
     else if (['rjsk','axt','秋田'].includes(departureAirport)) {
-      filePath = 'd_fs/ak/d_rjsr.json';
+      filePath = 'd_fs/ak/d_rjsk.json';
     } 
     // /秋田
-    
     // 岩手
     else if (['rjsi','hna','花巻'].includes(departureAirport)) {
       filePath = 'd_fs/it/d_rjsi.json';
     } 
     // /岩手
-
     // 山形
     else if (['rjsy','syo','庄内'].includes(departureAirport)) {
       filePath = 'd_fs/yg/d_rjsy.json';
@@ -128,32 +123,25 @@ function handleEnterKey(event) {
       filePath = 'd_fs/yg/d_rjsc.json';
     } 
     // /山形
-
     // 宮城
     else if (['rjss','sdj','仙台'].includes(departureAirport)) {
-      filePath = 'd_fs/mg/d_rjsy.json';
+      filePath = 'd_fs/mg/d_rjss.json';
     } 
     // /宮城
-
     // 福島
     else if (['rjsf','fks','福島'].includes(departureAirport)) {
       filePath = 'd_fs/fs/d_rjsf.json';
     } 
     // /福島
-
     // 茨城
-    else if (['rjsf','fks','福島'].includes(departureAirport)) {
-      filePath = 'd_fs/fs/d_rjsf.json';
+    else if(['rjah','ibr','茨城'].includes(departureAirport)) {
+      filePath = 'd_fs/ib/d_rjah.json';
     } 
     // /茨城
+    // 千葉
 
-
-
-
-
-
-
-
+    // /千葉
+    
     else {
        // 全部のファイル
       filePath = 'd_allflights.json';
@@ -166,10 +154,8 @@ function handleEnterKey(event) {
 
     // 選択されたファイルを読み込む
     const response = await fetch(filePath);
-
   // JSONデータを解析する
     const data = await response.json(); 
-    
     // flights配列を返す
     return data.flights; 
   }
