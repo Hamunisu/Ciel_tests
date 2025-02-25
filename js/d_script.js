@@ -165,7 +165,83 @@ function handleEnterKey(event) {
       filePath = 'd_fs/na/d_rjaf.json';
     } 
     // /長野
-
+    // 愛知
+    else if (['rjgg', 'ngo','中部','セントレア'].includes(departureAirport)) {
+      filePath = 'd_fs/ai/d_rjgg.json';
+    } 
+    else if (['rjna', 'nkm','小牧'].includes(departureAirport)) {
+      filePath = 'd_fs/ai/d_rjna.json';
+    } 
+    // /愛知
+    // 新潟
+    else if (['rjsn', 'kij','新潟'].includes(departureAirport)) {
+      filePath = 'd_fs/ni/d_rjsn.json';
+    } 
+    else if (['rjsd', 'sds','佐渡'].includes(departureAirport)) {
+      filePath = 'd_fs/ni/d_rjsd.json';
+    } 
+    // /新潟
+    // 富山
+    else if (['rjnt', 'toy','富山'].includes(departureAirport)) {
+      filePath = 'd_fs/tm/d_rjnt.json';
+    } 
+    // /富山
+    // 石川
+    else if (['rjnw', 'ntq','能登'].includes(departureAirport)) {
+      filePath = 'd_fs/is/d_rjnw.json';
+    } 
+    else if (['rjnk', 'kmq','小松'].includes(departureAirport)) {
+      filePath = 'd_fs/is/d_rjnk.json';
+    } 
+    // /石川
+    // 福井
+    else if (['rjnf', 'fkj','福井'].includes(departureAirport)) {
+      filePath = 'd_fs/fi/d_rjnf.json';
+    } 
+    // /福井
+    // 和歌山
+    
+    // /和歌山
+    // 大阪
+    // /大阪
+    // 兵庫
+    // /兵庫
+    // 徳島
+    // /徳島
+    // 高知
+    // /高知
+    // 愛媛
+    // /愛媛
+    // 香川
+    // /香川
+    // 鳥取
+    // /鳥取
+    // 米子
+    // /米子
+    // 島根
+    // /島根
+    // 岡山
+    // /岡山
+    // 広島
+    // /広島
+    // 山口
+    // /山口
+    // 福岡
+    // /福岡
+    // 大分
+    // /大分
+    // 佐賀
+    // /佐賀
+    // 長崎
+    // /長崎
+    // 熊本
+    // /熊本
+    // 宮崎
+    // /宮崎
+    // 鹿児島
+    // /鹿児島
+    // 沖縄
+    // /沖縄
     else {
        // 全部のファイル
       filePath = 'd_allflights.json';
