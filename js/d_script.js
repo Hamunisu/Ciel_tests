@@ -51,10 +51,8 @@ function handleEnterKey(event) {
     let filePath;
     // 出発空港に基づいて参照するファイルを選択
     departureAirport = departureAirport.toLowerCase(); // 入力値を小文字に変換
-    if (['rjtt', 'hnd','羽田'].includes(departureAirport)) {
-      filePath = 'd_fs/d_rjtt.json';
-    } 
-    else if (['rjcw','wkj','稚内'].includes(departureAirport)) {
+    
+    if (['rjcw','wkj','稚内'].includes(departureAirport)) {
       filePath = 'd_fs/hk/d_rjcw.json';
     } 
     else if (['rjer','ris','利尻'].includes(departureAirport)) {
@@ -139,9 +137,24 @@ function handleEnterKey(event) {
     } 
     // /茨城
     // 千葉
-
+    else if (['rjaa', 'nrt','成田'].includes(departureAirport)) {
+      filePath = 'd_fs/cb/d_rjaa.json';
+    } 
     // /千葉
-    
+    // 東京
+    else if (['rjtt', 'hnd','羽田'].includes(departureAirport)) {
+      filePath = 'd_fs/ty/d_rjtt.json';
+    } 
+    else if (['rjto', 'oim','大島'].includes(departureAirport)) {
+      filePath = 'd_fs/ty/d_rjto.json';
+    }
+    else if (['rjth', 'hac','八丈島'].includes(departureAirport)) {
+      filePath = 'd_fs/ty/d_rjth.json';
+    } 
+    else if (['rjaz', 'kzu','神津島'].includes(departureAirport)) {
+      filePath = 'd_fs/ty/d_rjaz.json';
+    } 
+    // /東京
     else {
        // 全部のファイル
       filePath = 'd_allflights.json';
@@ -159,7 +172,7 @@ function handleEnterKey(event) {
     // flights配列を返す
     return data.flights; 
   }
-  
+
   async function searchFlights() {
     // 出発空港の値を小文字に変換
     const departureInput = document.getElementById('departure').value.toLowerCase(); 
