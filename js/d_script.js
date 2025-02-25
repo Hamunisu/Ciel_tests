@@ -154,7 +154,18 @@ function handleEnterKey(event) {
     else if (['rjaz', 'kzu','神津島'].includes(departureAirport)) {
       filePath = 'd_fs/ty/d_rjaz.json';
     } 
-    // /東京
+    // /東京 
+    // 静岡
+    else if (['rjns', 'fsz','静岡','富士山静岡'].includes(departureAirport)) {
+      filePath = 'd_fs/sz/d_rjns.json';
+    }  
+    // 静岡
+    // 長野
+    else if (['rjaf', 'mmj','松本','信州まつもと'].includes(departureAirport)) {
+      filePath = 'd_fs/na/d_rjaf.json';
+    } 
+    // /長野
+
     else {
        // 全部のファイル
       filePath = 'd_allflights.json';
