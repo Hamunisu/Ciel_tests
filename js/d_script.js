@@ -104,10 +104,48 @@ function handleEnterKey(event) {
       filePath = 'd_fs/ao/d_rjsm.json';
     } 
     // /青森
+    
+    // 秋田
+    else if (['rjsr','onj','大館能代'].includes(departureAirport)) {
+      filePath = 'd_fs/ak/d_rjsr.json';
+    } 
+    else if (['rjsk','axt','秋田'].includes(departureAirport)) {
+      filePath = 'd_fs/ak/d_rjsr.json';
+    } 
+    // /秋田
+    
+    // 岩手
+    else if (['rjsi','hna','花巻'].includes(departureAirport)) {
+      filePath = 'd_fs/it/d_rjsi.json';
+    } 
+    // /岩手
 
+    // 山形
+    else if (['rjsy','syo','庄内'].includes(departureAirport)) {
+      filePath = 'd_fs/yg/d_rjsy.json';
+    } 
+    else if (['rjsc','gaj','山形'].includes(departureAirport)) {
+      filePath = 'd_fs/yg/d_rjsc.json';
+    } 
+    // /山形
 
+    // 宮城
+    else if (['rjss','sdj','仙台'].includes(departureAirport)) {
+      filePath = 'd_fs/mg/d_rjsy.json';
+    } 
+    // /宮城
 
+    // 福島
+    else if (['rjsf','fks','福島'].includes(departureAirport)) {
+      filePath = 'd_fs/fs/d_rjsf.json';
+    } 
+    // /福島
 
+    // 茨城
+    else if (['rjsf','fks','福島'].includes(departureAirport)) {
+      filePath = 'd_fs/fs/d_rjsf.json';
+    } 
+    // /茨城
 
 
 
