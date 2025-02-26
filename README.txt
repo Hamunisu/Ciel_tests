@@ -85,16 +85,16 @@
 コピペ推奨:
 
         <div class="patch-item">
-        <div class="date">2025/</div>
-        <div class="tag">更新</div>
-        <div class="content"></div>
+            <div class="date english">2025/</div>
+            <div class="tag">更新</div>
+            <div class="content"></div>
         </div> 
 
 
         例:
 
         <div class="patch-item">
-        <div class="date">2025/02/26</div>
+        <div class="date english">2025/02/26</div>
         <div class="tag">更新</div>
         <div class="content">新たな機能としてお知らせを開設しました。</div>
         </div>
