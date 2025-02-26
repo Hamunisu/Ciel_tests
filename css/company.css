@@ -32,7 +32,7 @@ html {
 
 body {
     /* 背景色 */    
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 
@@ -219,6 +219,53 @@ h1 {
     font-size: 24px;
     background-color: white;
 }
+
+  
+/* 全体のラッパー（枠は削除） */
+.patch {
+    width: 75%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* 各お知らせ項目（下線のみで区切る） */
+  .patch-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #5a6fa6;
+    padding: 10px;
+  }
+  
+  /* 最後の項目は下線をつけない */
+  .patch-item:last-child {
+    border-bottom: none;
+  }
+  
+  .date {
+    width: 120px;
+    text-align: center;
+    font-weight: none;
+    color: #212d5d;
+  }
+  
+  .tag {
+    width: 100px;
+    text-align: center;
+    background-color: #dee4ff;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 0 10px;
+  }
+  
+  /* 内容部分：残りの幅を埋める */
+  .content {
+    flex: 1;
+    word-wrap: break-word;
+  }
+  
+  
+
+
 
 
 /* フッター */

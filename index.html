@@ -109,26 +109,25 @@
 <!-- ----------------------------------------------------- -->
 
 <!-- コンテンツ （便名確認）-->
-
+<div class="bordered-container">
 <h2 class="japanese flight_number">国内線</h2>
 
 <!-- 検索フォーム -->
+
+
  <div class="form-container">
     <div class="textbox-container">
         <input type="text" placeholder="Departure" id="departure" onkeydown="handleEnterKey(event)">
         <input type="text" placeholder="Arrival" id="arrival" onkeydown="handleEnterKey(event)">
-
-        
-        
-        
-
     </div>
         <button id="searchButton" onclick="searchFlights()">Search</button>
         <div id="result-container">
           <div id="result" class="japanese"></div>
+        </div>
     </div>
- </div>
-  
+  </div>
+
+
  <!-- JS連携 --> 
   <script src="js/d_script.js"></script>
 

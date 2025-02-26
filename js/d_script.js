@@ -295,12 +295,11 @@ function handleEnterKey(event) {
         resultHtml += `<a href="${simbriefURL}" target="_blank" class="custom-button">CJA${flightNumber}便のフライト</a><br>`;
       });
     // 結果を表示&SimBriefリンクを追加
-      resultDiv.innerHTML = resultHtml; 
+      resultDiv.innerHTML = resultHtml;
     } 
     else {
       // 便名設定がないもの
       resultDiv.textContent = '一致する便が見つかりませんでした。'; 
     }
   }
-  
   // ---フライト検索---

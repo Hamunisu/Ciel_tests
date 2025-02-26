@@ -208,6 +208,15 @@ h1 {
   }
   
   /* h2 */
+  .bordered-container {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+ }
+
+
 
  h2{
     color: #212d5d;

@@ -80,6 +80,33 @@
 
 
 
+3.お知らせに追加する
+--------------------
+コピペ推奨:
+
+        <div class="patch-item">
+        <div class="date">2025/</div>
+        <div class="tag">更新</div>
+        <div class="content"></div>
+        </div> 
+
+
+        例:
+
+        <div class="patch-item">
+        <div class="date">2025/02/26</div>
+        <div class="tag">更新</div>
+        <div class="content">新たな機能としてお知らせを開設しました。</div>
+        </div>
+
+
+    ==解説==
+
+        1.2025/のあとに日付を入力
+
+        2.class="tag"のあとにタグとして緊急や更新を入力
+
+        3.class="content"のあとに内容を入力(改行は<br>でできます)
 
 
     -ほかの手順が知りたい場合はsunaまで連絡をいただければ対応いたします-

@@ -239,6 +239,15 @@ h1 {
   
   /* h2 */
 
+.bordered-container {
+   padding: 20px;
+   margin: 20px;
+   border-radius: 15px;
+   background-color: white;
+   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
  h2{
     color: #212d5d;
 } 
@@ -292,7 +301,7 @@ h1 {
 .form-container button {
     padding: 1%  8%;
     display: inline-block;
-    background: linear-gradient(to right, #212d5d 0%, #9fb3ff 45%, #ffdad1 101%);
+    background: linear-gradient(to right, #212d5d 0%, #9fb3ff 45%, #ffdad1 100%);
     background-size: 200% auto;  
     color: white;
     border-radius: 45px;
