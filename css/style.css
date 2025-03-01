@@ -189,8 +189,9 @@ nav a:hover {
 
 /* -------------/ハンバーガーメニュー--------------- */
 
+/* スクロール設定 */
 .scroll-container {
-    margin-top: 5%;
+    margin-top: 100px;
     width: 100%;
     overflow: hidden;
     background-color: #ffffff;
@@ -220,6 +221,7 @@ nav a:hover {
     border: 5px solid #212d5d;
     border-radius: 15px; 
 }
+/* /スクロール設定 */
 
 /* コンテナ写真設定 */
 .image-container img {
