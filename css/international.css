@@ -234,6 +234,24 @@ h1 {
     background-color: white;
 }
 
+/* 削除予定 */
+
+.coming {
+    width: 100%;
+    margin-top: 2%;
+    text-align: center;
+    font-size: 450%;
+    color: #212d5d;
+}
+
+
+
+
+
+
+
+/* /削除予定 */
+
 /* 検索フォーム */
 .form-container {
     display: flex;

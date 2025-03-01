@@ -189,7 +189,25 @@ nav a:hover {
 
 /* -------------/ハンバーガーメニュー--------------- */
 
-
+.scroll-container {
+    margin-top: 5%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+  }
+  .scroll {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-animation 10s linear infinite; /* 一時的に短くしてテスト */
+    position: absolute;
+    right: 0; /* 右端からスタート */
+    color: #212d5d;
+    font-size: 250%;
+  }
+  @keyframes scroll-animation {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-250%); }
+  }
 
 /* 画像コンテナ */
 .image-container {
