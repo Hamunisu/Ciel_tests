@@ -200,47 +200,176 @@ function handleEnterKey(event) {
     } 
     // /福井
     // 和歌山
-    
+    else if (['rjbd', 'shm','和歌山'].includes(departureAirport)) {
+      filePath = 'd_fs/wa/d_rjbd.json';
+    } 
     // /和歌山
     // 大阪
+    else if (['rjoo', 'itm','伊丹'].includes(departureAirport)) {
+      filePath = 'd_fs/os/d_rjoo.json';
+    } 
+    else if (['rjbb', 'kix','関西'].includes(departureAirport)) {
+      filePath = 'd_fs/os/d_rjbb.json';
+    } 
     // /大阪
     // 兵庫
+    else if (['rjbe', 'ukb','神戸'].includes(departureAirport)) {
+      filePath = 'd_fs/hg/d_rjbe.json';
+    } 
+    else if (['rjbt', 'tjh','但馬'].includes(departureAirport)) {
+      filePath = 'd_fs/hg/d_rjbt.json';
+    } 
     // /兵庫
     // 徳島
+    else if (['rjos', 'tks','徳島'].includes(departureAirport)) {
+      filePath = 'd_fs/tk/d_rjos.json';
+    } 
     // /徳島
     // 高知
+    else if (['rjok', 'kcz','高知'].includes(departureAirport)) {
+      filePath = 'd_fs/ko/d_rjok.json';
+    } 
     // /高知
     // 愛媛
+    else if (['rjom', 'myj','松山'].includes(departureAirport)) {
+      filePath = 'd_fs/eh/d_rjom.json';
+    } 
     // /愛媛
     // 香川
+    else if (['rjot', 'tak','高松'].includes(departureAirport)) {
+      filePath = 'd_fs/ka/d_rjot.json';
+    } 
     // /香川
     // 鳥取
+    else if (['rjor', 'ttj','鳥取'].includes(departureAirport)) {
+      filePath = 'd_fs/tt/d_rjor.json';
+    } 
     // /鳥取
-    // 米子
-    // /米子
     // 島根
+    else if (['rjoh', 'tgj','米子'].includes(departureAirport)) {
+      filePath = 'd_fs/sm/d_rjoh.json';
+    }     
+    else if (['rjoc', 'izo','出雲'].includes(departureAirport)) {
+      filePath = 'd_fs/sm/d_rjoc.json';
+    } 
+    else if (['rjno', 'oki','隠岐'].includes(departureAirport)) {
+      filePath = 'd_fs/sm/d_rjno.json';
+    } 
+    else if (['rjow', 'iwj','石見'].includes(departureAirport)) {
+      filePath = 'd_fs/sm/d_rjow.json';
+    } 
     // /島根
     // 岡山
+    else if (['rjob', 'okj','岡山'].includes(departureAirport)) {
+      filePath = 'd_fs/oy/d_rjob.json';
+    } 
     // /岡山
     // 広島
+    else if (['rjoa', 'hij','広島'].includes(departureAirport)) {
+      filePath = 'd_fs/hs/d_rjoa.json';
+    } 
     // /広島
     // 山口
+    else if (['rjdc', 'ubj','宇部'].includes(departureAirport)) {
+      filePath = 'd_fs/ya/d_rjdc.json';
+    } 
+    else if (['rjoi', 'iwk','岩国'].includes(departureAirport)) {
+      filePath = 'd_fs/ya/d_rjoi.json';
+    } 
     // /山口
     // 福岡
+    else if (['rjfr', 'kkj','北九州'].includes(departureAirport)) {
+      filePath = 'd_fs/fo/d_rjfr.json';
+    } 
+    else if (['rjff', 'fuk','福岡'].includes(departureAirport)) {
+      filePath = 'd_fs/fo/d_rjff.json';
+    } 
     // /福岡
     // 大分
+    else if (['rjfo', 'oit','大分'].includes(departureAirport)) {
+      filePath = 'd_fs/oi/d_rjfo.json';
+    } 
     // /大分
     // 佐賀
+    else if (['rjfs', 'hsg','佐賀'].includes(departureAirport)) {
+      filePath = 'd_fs/sg/d_rjfs.json';
+    } 
     // /佐賀
     // 長崎
+    else if (['rjfu', 'ngs','長崎'].includes(departureAirport)) {
+      filePath = 'd_fs/ns/d_rj.json';
+    } 
+    else if (['rjfe', 'fuj','福江'].includes(departureAirport)) {
+      filePath = 'd_fs/ns/d_rjfe.json';
+    } 
+    else if (['rjdb', 'iki','壱岐'].includes(departureAirport)) {
+      filePath = 'd_fs/ns/d_rjdb.json';
+    } 
+    else if (['rjdt', 'tsj','対馬'].includes(departureAirport)) {
+      filePath = 'd_fs/ns/d_rjdt.json';
+    } 
     // /長崎
     // 熊本
+    else if (['rjda', 'axj','天草'].includes(departureAirport)) {
+      filePath = 'd_fs/ku/d_rjda.json';
+    } 
+    else if (['rjft', 'kmj','熊本'].includes(departureAirport)) {
+      filePath = 'd_fs/ns/d_rjft.json';
+    } 
     // /熊本
     // 宮崎
+    else if (['rjfm', 'kmi','宮崎'].includes(departureAirport)) {
+      filePath = 'd_fs/mz/d_rjfm.json';
+    } 
     // /宮崎
     // 鹿児島
+    else if (['rjfk', 'koj','鹿児島'].includes(departureAirport)) {
+      filePath = 'd_fs/kg/d_rjfk.json';
+    } 
+    else if (['rjfg', 'tne','種子島'].includes(departureAirport)) {
+      filePath = 'd_fs/kg/d_rjfg.json';
+    } 
+    else if (['rjfc', 'kum','屋久島'].includes(departureAirport)) {
+      filePath = 'd_fs/kg/d_rjfc.json';
+    } 
+    else if (['rjka', 'asj','奄美'].includes(departureAirport)) {
+      filePath = 'd_fs/kg/d_rjka.json';
+    } 
+    else if (['rjki', 'kkx','喜界'].includes(departureAirport)) {
+      filePath = 'd_fs/kg/d_rjki.json';
+    } 
+    else if (['rjkb', 'oke','沖永良部'].includes(departureAirport)) {
+      filePath = 'd_fs/kg/d_rjkb.json';
+    } 
+    else if (['rjkn', 'rnj','与論'].includes(departureAirport)) {
+      filePath = 'd_fs/kg/d_rjkn.json';
+    } 
     // /鹿児島
     // 沖縄
+    else if (['roah', 'oka','沖縄'].includes(departureAirport)) {
+      filePath = 'd_fs/ok/d_roah.json';
+    } 
+    else if (['roig', 'isg','石垣'].includes(departureAirport)) {
+      filePath = 'd_fs/ok/d_roig.json';
+    } 
+    else if (['rork', 'kit','北大東'].includes(departureAirport)) {
+      filePath = 'd_fs/ok/d_rork.json';
+    } 
+    else if (['romd', 'mmd','南大東'].includes(departureAirport)) {
+      filePath = 'd_fs/ok/d_romd.json';
+    } 
+    else if (['rokj', 'ueo','久米'].includes(departureAirport)) {
+      filePath = 'd_fs/ok/d_rokj.json';
+    } 
+    else if (['romy', 'mmy','宮古'].includes(departureAirport)) {
+      filePath = 'd_fs/ok/d_romy.json';
+    } 
+    else if (['rors', 'shi','下地'].includes(departureAirport)) {
+      filePath = 'd_fs/ok/d_rors.json';
+    } 
+    else if (['royn', 'ogn','与那国'].includes(departureAirport)) {
+      filePath = 'd_fs/ok/d_royn.json';
+    } 
     // /沖縄
     else {
        // 全部のファイル

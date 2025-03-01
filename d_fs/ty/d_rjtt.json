@@ -251,7 +251,7 @@
       },
             
       {
-        "arrival":["ejoi","iwk","岩国"],
+        "arrival":["rjoi","iwk","岩国"],
         "flightNumber":"1440"
       },
             
@@ -277,7 +277,7 @@
             
       {
         "arrival":["rjfu","ngs","長崎"],
-        "flightNumber":"19161918"
+        "flightNumber":"1916\n1918"
       },
             
       {
@@ -319,7 +319,7 @@
         "arrival":["roah","oka","那覇"],
         "flightNumber":"1964\n1966\n1968\n1970\n1972"
       },
-                        
+      
       {
         "arrival":["roig","isg","石垣"],
         "flightNumber":"1992"
