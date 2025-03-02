@@ -14,7 +14,7 @@
 <!--cssリンク-->
 <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css">
     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
 <!-- ------------------------------------------------------------------- -->
 
 <!--ファビコン-->
@@ -112,12 +112,15 @@
 <!-- ----------------------------------------------------- -->
 
 <!-- コンテンツ （便名確認）-->
+
+
 <div class="bordered-container">
 <h2 class="japanese flight_number">国内線</h2>
 
 <!-- 検索フォーム -->
 
  <div class="form-container">
+    <div id="map"></div>
     <div class="textbox-container">
         <input type="text" placeholder="Departure" id="departure" onkeydown="handleEnterKey(event)">
         <input type="text" placeholder="Arrival" id="arrival" onkeydown="handleEnterKey(event)">
@@ -132,11 +135,13 @@
 
  <!-- JS連携 --> 
   <script src="js/d_script.js"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="js/map.js"></script>
 
 
 <!-- 画像コンテナ -->
  <div class="image-container">
-    <img src="image//gallery/MSFS_WA_title.png" alt="wanpachi">
+    <img src="image/gallery/MSFS_WA_title.png" alt="wanpachi">
  </div>
 
  

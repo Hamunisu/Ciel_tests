@@ -31,7 +31,6 @@ html {
 /* ボディ */
 
 body {
-    /* 背景色 */    
     background-color: whitesmoke;
 }
 
@@ -44,11 +43,8 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    /* 上下サイズ */
     height: 85px;
-    /* 背景色 */
     background: linear-gradient(to right, #212d5d, #9fb3ff);
-    /*優先度*/
     z-index: 1000; 
     display: flex;
     justify-content: space-between;
@@ -95,17 +91,17 @@ nav a {
     text-decoration: none;
     margin: 20px;
     font-size: 120%;
-    padding-bottom: 3px; /* テキストと下線の間隔 */
+    padding-bottom: 3px;
     background-image: linear-gradient(#ffffff, #ffffff);
     background-repeat: no-repeat;
-    background-position: bottom right; /* 下線の初期位置 */
-    background-size: 0 1px; /* 下線のサイズ（横幅、高さ） */
+    background-position: bottom right;
+    background-size: 0 1px; 
     transition: background-size 0.3s;
 }
 
 nav a:hover {
-    background-position: bottom left; /* 下線のホバー時位置 */
-    background-size: 100% 1px; /* 下線の横幅を100%にする */
+    background-position: bottom left;
+    background-size: 100% 1px;
   }
 
 /* /header */
@@ -115,21 +111,18 @@ nav a:hover {
 .right-box {
     position: fixed;
     top: 0;
-    /* 右に隠す widthと同じ数値*/
     right: -20%;
-     /*横幅  */
     width: 16%;
     height: 100%;
     background: linear-gradient(to bottom, #5a6fa6, #212d5d);
     z-index: 999;
-    /* スライドイン効果 */
     transition: right 0.3s ease; 
     display: flex;
 }
 
 
 .right-box.active {
-    right: 0; /* メニューが押されたときに表示 */
+    right: 0;
 }
 
 .menu {
@@ -163,7 +156,7 @@ nav a:hover {
   }
 
   #menu-toggle:checked + .menu-icon + .right-box {
-    right: 0; /* メニューが押されたときに表示 */
+    right: 0;
 }
 
 /* アイコン切り替え */
@@ -195,21 +188,29 @@ nav a:hover {
     width: 100%;
     overflow: hidden;
     background-color: #ffffff;
-  }
+    position: relative;
+    height: 100px;
+    display: flex;
+  align-items: center;
+}
+  
   .scroll {
     display: inline-block;
     white-space: nowrap;
-    animation: scroll-animation 10s linear infinite; /* 一時的に短くしてテスト */
+    animation: scroll-animation 10s linear infinite;
     position: absolute;
-    right: 0; /* 右端からスタート */
+    right: 100%;
     color: #212d5d;
     font-size: 250%;
   }
+  
   @keyframes scroll-animation {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-250%); }
+    0% { transform: translateX(375%); }
+    100% { transform: translateX(-100%); }
   }
-
+  
+  
+  
 /* 画像コンテナ */
 .image-container {
     display: flex;
@@ -237,23 +238,14 @@ nav a:hover {
 /* h1 */
 
 h1 {
-    /* 文字を中心へ */
     text-align: center;
-     /* テキストカラー 変更不要*/
     color: #212d5d;
-    /* テキストの太さ 変更不要*/
     font-weight: 400;
-    /* 斜体にしない */
     font-style: normal;
-    /* 上から何px下げるか */
-    margin-top: 95px;
-    /* フォントサイズ　変更不要 */
+    margin-top: 10px;
     font-size: 50px;
-    /*文字周りの余白*/
     padding: 0.5em;
-    /*テキストの背景色　変更不要*/
     background: #d6e0ff;
-    /* ボーダーライン作成　変更不要 */
     border-left: solid 5px #212d5d;
   }
   
@@ -292,22 +284,25 @@ h1 {
     margin-top: 20px;
     width: 100%;
 }
-
+#map {
+    height: 55vh;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 3%;
+    border: 2px solid #212d5d;
+    border-radius: 30px;
+}
+  
 .textbox-container {
     display: flex;
-    justify-content: center; /* 中央に配置 */
-    /* ボックス幅 */
+    justify-content: center;
     width: 80%;
-
-    /* ボックス間の距離 */
     gap: 10%;
 }
 
 /* 検索テキストボックス */
 .form-container input[type ="text"] {
-    /* BOX横 */
     width: 80%;
-    /* BOX縦 */
     padding: 5%;
     margin-bottom: 15px;
     background-color: white;
