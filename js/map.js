@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
           // カスタムアイコンの設定
           const iconOptions = {
-            iconUrl: label === 'D' ? '../image/departure.png' : '../image/arrival.png', // カスタムアイコンのパス
+            iconUrl: label === 'D' ? 'image/departure.png' : 'image/arrival.png', // カスタムアイコンのパス
             iconSize: [40, 40], // アイコンのサイズ（1:1の比率）
             iconAnchor: [20, 40], // アイコンのアンカー（ポイント）
             popupAnchor: [0, -40] // ポップアップのアンカー（ポイント）
