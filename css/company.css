@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+}
+
+.japanese {
+    font-family: "Sawarabi Gothic", sans-serif;
+    font-style: italic;
+}
+
+.english {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+
+body {
+    background-color: #C0C0C0;
+}
+
+header {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 75px;
+  background: linear-gradient(to bottom, #2f4f4f, #3a6161, #556b6b);
+  padding: 0 180px;
+  z-index: 1001;
+}
+
+  .logo img {
+    height: 55px;
+    cursor: pointer;
+  }
+
+.hm img {
+    margin-right: 100px;
+    height: 75px;
+    cursor: pointer;
+}
+
+.right-items {
+    display: flex;
+    gap: 30px;
+    margin-left: 30px;
+    align-items: center;
+  }
+
+/* -------------------HM内容-------------------------- */
+
+
+/* -------------/ハンバーガーメニュー--------------- */
+
+/* h1 */
+
+h1 {
+    /* 文字を中心へ */
+    text-align: center;
+     /* テキストカラー 変更不要*/
+    color: white;
+    /* テキストの太さ 変更不要*/
+    font-weight: 400;
+    /* 斜体にしない */
+    font-style: normal;
+    /* 上から何px下げるか */
+    margin-top: 95px;
+    /* フォントサイズ　変更不要 */
+    font-size: 50px;
+    /*文字周りの余白*/
+    padding: 0.5em;
+    /*テキストの背景色　変更不要*/
+    background: #899b9b;
+    /* ボーダーライン作成　変更不要 */
+    border-left: solid 5px #2f4f4f;
+  }
+  
+  /* h2 */
+
+ h2{
+    color: #2f4f4f;
+} 
+
+.flight_number {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid #2f4f4f;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+  
+/* 全体のラッパー（枠は削除） */
+.patch {
+    width: 75%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* 各お知らせ項目（下線のみで区切る） */
+  .patch-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #3a6161;
+    padding: 10px;
+  }
+  
+  /* 最後の項目は下線をつけない */
+  .patch-item:last-child {
+    border-bottom: none;
+  }
+  
+  .date {
+    width: 120px;
+    text-align: center;
+    font-weight: none;
+    color: white;
+  }
+  
+  .tag {
+    width: 100px;
+    text-align: center;
+    background-color: #899b9b;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 0 10px;
+    color: white;
+  }
+
+  .tag-v2 {
+    width: 100px;
+    text-align: center;
+    background-color: #ff0000;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 0 10px;
+    color: white;
+  }
+  
+  /* 内容部分：残りの幅を埋める */
+  .content {
+    flex: 1;
+    word-wrap: break-word;
+    color: #2f4f4f;
+  }
+
+/* フッター */
+footer {
+    background-color: white;
+    padding: 25px;
+    text-align: center;
+    border-top: 2px solid #2f4f4f;
+    margin-top: 25px;
+}

@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+}
+
+.japanese {
+    font-family: "Sawarabi Gothic", sans-serif;
+    font-style: italic;
+}
+
+.english {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+
+body {
+    background-color: #C0C0C0;
+}
+
+header {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+    background: linear-gradient(to bottom, #2f4f4f, #3a6161, #556b6b);
+    padding: 0 180px;
+    z-index: 1001;
+  }
+
+  .logo img {
+    height: 55px;
+    cursor: pointer;
+  }
+
+.hm img {
+    margin-right: 100px;
+    height: 75px;
+    cursor: pointer;
+}
+
+.right-items {
+    display: flex;
+    gap: 30px;
+    margin-left: 30px;
+    align-items: center;
+  }
+
+  h1 {
+    /* 文字を中心へ */
+    text-align: center;
+     /* テキストカラー 変更不要*/
+    color: white;
+    /* テキストの太さ 変更不要*/
+    font-weight: 400;
+    /* 斜体にしない */
+    font-style: normal;
+    /* 上から何px下げるか */
+    margin-top: 95px;
+    /* フォントサイズ　変更不要 */
+    font-size: 50px;
+    /*文字周りの余白*/
+    padding: 0.5em;
+    /*テキストの背景色　変更不要*/
+    background: #899b9b;
+    /* ボーダーライン作成　変更不要 */
+    border-left: solid 5px #2f4f4f;
+  }
+  
+  /* h2 */
+
+ h2{
+    color: #2f4f4f;
+} 
+
+.flight_number {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid #2f4f4f;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+
+
+/* 写真と紹介文字の配置 */
+.image-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5%;
+    
+}
+
+.image-item {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-item img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border: 5px solid #212d5d;
+    box-shadow: 0 0 10px #5a6fa6;
+    border-radius: 20px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.image-item p {
+    color: #212d5d;
+    font-size: 20px;
+    text-align: center;
+    /* 文字を太く */
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* ----------------------/ギャラリー------------------------ */

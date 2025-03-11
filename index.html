@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<!--日本語-->
+
+<html lang="ja">
+
+<!--準備-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>CIEL AIR</title>
+    <meta name="description" content="ciel air">
+    
+<!--cssリンク-->
+<link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/hm.css">
+  
+<!--ファビコン-->
+<link rel="icon" type="image/png" href="image/fv/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="image/fv/favicon.svg" />
+<link rel="shortcut icon" href="image/fv/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="image/fv/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="CIELAIR" />
+<link rel="manifest" href="image/fv/site.webmanifest" />
+
+
+<!-- English -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+<!-- Japanese -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+
+<!-- International Flight専用 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+      <a href="index.html">
+        <div class="logo">
+          <img src="image/ciellogo.png" alt="Logo">
+        </div>
+      </a>
+        <div class="right-items english japanese">
+          <!-- <a href="home.html">home</a> -->
+          <a href="https://dispatch.simbrief.com/briefing/latest" target="_blank" rel="noopener noreferrer">simbrief</a>
+          <a href="https://docs.google.com/spreadsheets/d/1XCRbloUrsoi-QF936vX9XomI4-PYUnRdxw0KImmjXLI/edit?gid=479897119#gid=479897119"target="_blank" rel="noopener noreferrer">ログブック</a>
+          
+          <div class="burger burger-slip burger-right">
+            <div class="burger-lines">
+            </div>
+          </div>
+        </div>
+      </header>
+<!-- HM -->
+      <div class="overlay"></div>
+      <div class="menu">
+        <div class="menu-item english">
+          <a href="index.html">&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</a>
+        </div>
+        <div class="menu-item english">
+          <a href="html/gallery.html">Gallery&nbsp;&nbsp;</a>
+        </div>
+        <div class="menu-item english">
+          <a href="html/company.html">Company</a>
+        </div>
+      </div>
+
+
+      <div class="switcher">
+        <button id="domesticBtn" class="active">国内</button>
+        <button id="internationalBtn">国際</button>
+      </div>
+
+
+
+      <div id="domesticContent" class="content">
+        <h2 class="english">国内線</h2>
+          <div class="box">
+            <input type="text" id="departure" class="english" placeholder="Departure" autocomplete="off" spellcheck="false">
+            <button id="swapButton" type="button" tabindex="-1">
+              <img src="image/swap.png" alt="swap" class="swap-icon">
+            </button>
+            <input type="text" id="arrival" class="english" placeholder="Arrival" autocomplete="off" spellcheck="false">
+            
+          </div>
+            <button id="search" class="search japanese">検索</button>
+          <div id="result" class="result">
+          </div>
+      </div>      
+      
+
+      <div id="internationalContent" class="content hidden">
+        <h2 class="english">国際線</h2>
+        <p class="english">Coming Soon...</p>
+      </div>
+
+
+
+      <script src="js/script.js"></script>
+      <script src="js/d_script.js"></script>
+      
+      
+      
+      
+      <footer>
+        <p class="english">&copy; Ciel Airlines. All rights reserved.
+        </p> 
+      </footer>
+</body>
+</html>
