@@ -96,12 +96,9 @@ header {
     width: 50%;
     height: auto;
     margin: 0 auto;
-    margin-bottom: 15%;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
-    justify-content: center;
-    align-items: center;
     background: linear-gradient(to bottom, #2f4f4f, #3a6161, #556b6b);
     box-shadow: 0 4px 6px #4d4d4d;
     flex-direction: column;     
@@ -224,9 +221,10 @@ header {
   }
 
 
-
-
   footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     background-color: white;
     padding: 25px;
     text-align: center;
