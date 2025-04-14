@@ -76,7 +76,7 @@
     </div>
 
 
-      <div class="switcher">
+      <div class="switcher english">
         <button id="domesticBtn" class="active">国内</button>
         <button id="internationalBtn">国際</button>
       </div>
@@ -115,16 +115,33 @@
       </div>
 
 
+      <div class="switcher english">
+        <button id="msfsBtn" class="active">MSFS</button>
+        <button id="xplaneBtn">X-plane</button>
+      </div>
+
       <div class="r_container english japanese">
+        <div id="msfsContent">
         <div class="r_box">
         <h2>機体ルーレット</h2>
         <label for="r_select"><h3>機体を選んでください:</label>
-        <select id="r_select">
-          </h3>
-        </select>
+        <select id="r_select"></h3></select>
         <button id="r_button" class="search">スピン</button>
         <p id="r_result">結果がここに表示されます</p>
         </div>
+      </div>
+      </div>
+
+      <div class="r_container english japanese">
+        <div id="xplaneContent">
+        <div class="r_box">
+        <h2>機体ルーレット</h2>
+        <label for="r_x_select"><h3>機体を選んでください:</h3></label>
+        <select id="r_x_select"></select>
+        <button id="r_x_button" class="search">スピン</button>
+        <p id="r_x_result">結果がここに表示されます</p>
+        </div>
+      </div>
       </div>
 
       <script src="js/script.js"></script>

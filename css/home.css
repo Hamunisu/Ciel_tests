@@ -228,6 +228,13 @@ header {
   }
 
 
+  #msfsContent {
+    display: block;
+  }
+
+  #xplaneContent {
+    display: none;
+  }
 
   .r_container {
     display: flex;

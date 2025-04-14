@@ -1,13 +1,27 @@
-// 入力フィールドに大文字変換のイベントを追加
+// 入力フィールドに大文字化のイベントを追加
 const inputElements = document.querySelectorAll('#departure, #arrival');
 
 inputElements.forEach(input => {
   input.addEventListener('input', (event) => {
-    event.target.value = event.target.value.toUpperCase();
+    const inputField = event.target;
+    const currentValue = inputField.value;
+
+    // 現在の値を大文字に変換
+    const upperCaseValue = currentValue.toUpperCase();
+
+    // すでに大文字なら何もしない
+    if (currentValue !== upperCaseValue) {
+      // 現在のカーソル位置を取得
+      const cursorPosition = inputField.selectionStart;
+      
+      // 値を大文字に変換
+      inputField.value = upperCaseValue;
+      
+      // カーソル位置を戻す
+      inputField.setSelectionRange(cursorPosition, cursorPosition);
+    }
   });
 });
-
-
 
 // DOM コンテンツ読み込み時にイベントリスナーを登録
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (arrivalInputEl) arrivalInputEl.addEventListener('keydown', handleEnterKey);
 });
 
+// 他の部分（空港チェック、フライト情報取得など）もそのまま利用
 async function checkAirports(departure, arrival) {
   try {
     const response = await fetch('d_fs/airport_name.json');
@@ -165,6 +180,7 @@ async function fetchFlights(departureAirport) {
   }
 }
 
+// 検索処理
 async function searchFlights() {
   const departureInput = document.getElementById('departure').value.trim().toLowerCase();
   const arrivalInput   = document.getElementById('arrival').value.trim().toLowerCase();
@@ -184,7 +200,6 @@ async function searchFlights() {
       flight.arrival.map(a => a.toLowerCase()).includes(arrivalInput)
     );
     if (matchedFlight) {
-
       const flightNumbers = matchedFlight.flightNumber.split('\n').map(num => num.trim());
       const airline = "CJA";
       const orig    = departureInput.toUpperCase();
@@ -197,7 +212,6 @@ async function searchFlights() {
       resultDiv.innerHTML = resultHtml;
       return;
     } else {
- 
       const validAirports = await checkAirports(departureInput, arrivalInput);
       if (validAirports) {
         const airline = "CJA";
@@ -210,9 +224,7 @@ async function searchFlights() {
         return;
       }
     }
-  }
-
-  else if (flights === 1) {
+  } else if (flights === 1) {
     const validAirports = await checkAirports(departureInput, arrivalInput);
     if (validAirports) {
       const airline = "CJA";

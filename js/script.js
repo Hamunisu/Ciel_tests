@@ -62,3 +62,26 @@ document.addEventListener('keydown', (event) => {
     event.preventDefault();
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const msfsBtn = document.getElementById('msfsBtn');
+  const xplaneBtn = document.getElementById('xplaneBtn');
+  const msfsContent = document.getElementById('msfsContent');
+  const xplaneContent = document.getElementById('xplaneContent');
+
+  // MSFSタブ切り替え
+  msfsBtn.addEventListener('click', () => {
+    msfsBtn.classList.add('active');
+    xplaneBtn.classList.remove('active');
+    msfsContent.classList.remove('hidden');
+    xplaneContent.classList.add('hidden');
+  });
+
+  // X-planeタブ切り替え
+  xplaneBtn.addEventListener('click', () => {
+    xplaneBtn.classList.add('active');
+    msfsBtn.classList.remove('active');
+    xplaneContent.classList.remove('hidden');
+    msfsContent.classList.add('hidden');
+  });
+});
