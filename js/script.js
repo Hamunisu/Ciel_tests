@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     domesticContent.classList.remove('hidden');
     internationalContent.classList.add('hidden');
   });
+  
   internationalBtn.addEventListener('click', () => {
     internationalBtn.classList.add('active');
     domesticBtn.classList.remove('active');
@@ -35,20 +36,29 @@ document.addEventListener('DOMContentLoaded', () => {
     domesticContent.classList.add('hidden');
   });
 
-  const swapButton = document.getElementById('swapButton');
+  const domesticSwapButton = document.getElementById('domesticSwapButton');
   const departureInput = document.getElementById('departure');
   const arrivalInput = document.getElementById('arrival');
 
-  swapButton.addEventListener('click', () => {
+  domesticSwapButton.addEventListener('click', () => {
     const temp = departureInput.value;
     departureInput.value = arrivalInput.value;
     arrivalInput.value = temp;
   });
+
+  const internationalSwapButton = document.getElementById('internationalSwapButton');
+  const iDepartureInput = document.getElementById('i_departure');
+  const iArrivalInput = document.getElementById('i_arrival');
+
+  internationalSwapButton.addEventListener('click', () => {
+    const tempInternational = iDepartureInput.value;
+    iDepartureInput.value = iArrivalInput.value;
+    iArrivalInput.value = tempInternational;
+  });
 });
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter' && document.activeElement.id === 'swapButton') {
+  if (event.key === 'Enter' && (document.activeElement.id === 'domesticSwapButton' || document.activeElement.id === 'internationalSwapButton')) {
     event.preventDefault();
   }
 });
-

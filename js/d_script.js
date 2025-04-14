@@ -1,3 +1,14 @@
+// 入力フィールドに大文字変換のイベントを追加
+const inputElements = document.querySelectorAll('#departure, #arrival');
+
+inputElements.forEach(input => {
+  input.addEventListener('input', (event) => {
+    event.target.value = event.target.value.toUpperCase();
+  });
+});
+
+
+
 // DOM コンテンツ読み込み時にイベントリスナーを登録
 document.addEventListener('DOMContentLoaded', () => {
   const searchButton = document.getElementById('search');
@@ -96,7 +107,7 @@ async function fetchFlights(departureAirport) {
     { keys: ['rjff', 'fuk', '福岡'], path: 'd_fs/fo/d_rjff.json' },
     { keys: ['rjfo', 'oit', '大分'], path: 'd_fs/oi/d_rjfo.json' },
     { keys: ['rjfs', 'hsg', '佐賀'], path: 'd_fs/sg/d_rjfs.json' },
-    { keys: ['rjfu', 'ngs', '長崎'], path: 'd_fs/ns/d_rj.json' },
+    { keys: ['rjfu', 'ngs', '長崎'], path: 'd_fs/ns/d_rjfe.json' },
     { keys: ['rjfe', 'fuj', '福江'], path: 'd_fs/ns/d_rjfe.json' },
     { keys: ['rjdb', 'iki', '壱岐'], path: 'd_fs/ns/d_rjdb.json' },
     { keys: ['rjdt', 'tsj', '対馬'], path: 'd_fs/ns/d_rjdt.json' },

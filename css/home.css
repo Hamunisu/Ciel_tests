@@ -93,7 +93,7 @@ header {
 
   
   .content {
-    width: 50%;
+    width: 950px;
     height: auto;
     margin: 0 auto;
     margin-bottom: 470px;
@@ -145,13 +145,18 @@ header {
     height: 150px;
     box-shadow: 0 2px 4px #556b6b;
   }
+
+  input::placeholder {
+  color: #e7e7e7;
+  font-size: 25px;
   
+  }
   input:focus {
     background-color: white;
     outline: none;
   }
 
-  #swapButton {
+  #internationalSwapButton,#domesticSwapButton{
     background-color: transparent;
     border: none;
     cursor: pointer;

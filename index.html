@@ -84,10 +84,10 @@
 
 
       <div id="domesticContent" class="content">
-        <h2 class="english">国内線</h2>
+        <h2 class="english japanese">国内線</h2>
           <div class="box">
             <input type="text" id="departure" class="english" placeholder="Departure" autocomplete="off" spellcheck="false">
-            <button id="swapButton" type="button" tabindex="-1">
+            <button id="domesticSwapButton" type="button" tabindex="-1">
               <img src="image/swap.png" alt="swap" class="swap-icon">
             </button>
             <input type="text" id="arrival" class="english" placeholder="Arrival" autocomplete="off" spellcheck="false">
@@ -100,12 +100,24 @@
       
 
       <div id="internationalContent" class="content hidden">
-        <h2 class="english">国際線</h2>
-        <p class="english">Coming Soon...</p>
+        <h2 class="japanese english">international</h2>
+        <div class="box">
+          <input type="text" id="i_departure" class="english" placeholder="Departure" autocomplete="off" spellcheck="false">
+          <button id="internationalSwapButton" type="button" tabindex="-1">
+            <img src="image/swap.png" alt="swap" class="swap-icon">
+          </button>
+          <input type="text" id="i_arrival" class="english" placeholder="Arrival" autocomplete="off" spellcheck="false">
+          
+        </div>
+          <button id="i_search" class="search japanese">検索</button>
+        <div id="i_result" class="result">
+        </div>
       </div>
 
       <script src="js/script.js"></script>
       <script src="js/d_script.js"></script>
+      <script src="js/i_script.js"></script>
+      
       
       
       
