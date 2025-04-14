@@ -96,7 +96,7 @@ header {
     width: 950px;
     height: auto;
     margin: 0 auto;
-    margin-bottom: 470px;
+    margin-bottom: 300px;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
@@ -117,7 +117,7 @@ header {
   h2 {
     font-size: 25px;
     text-align: center;
-    color: white;
+    color: wheat;
   }
   
   p {
@@ -226,6 +226,61 @@ header {
     text-decoration: none;
   }
 
+
+
+  .r_container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;    
+  }
+
+  .r_box{
+    width: 750px;
+    padding: 45px;
+    margin: 0 auto;
+    margin-bottom: 250px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background: linear-gradient(to bottom, #2f4f4f, #3a6161, #556b6b);
+    box-shadow: 0 4px 6px #4d4d4d;
+    flex-direction: column; 
+  }
+  
+  h3 {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+  }
+
+  .r_box h2 {
+    color: white;
+  }
+  .r_box select {
+    font-size: 16px;
+    padding: 5px;
+    color: wheat;
+  }
+
+  .r_box select option {
+    font-size: 16px;
+    padding: 5px;
+    color: wheat;
+    background-color: #2f4f4f;
+  }
+
+  #r_result {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+
+
+  
 
   footer {
     background-color: white;
