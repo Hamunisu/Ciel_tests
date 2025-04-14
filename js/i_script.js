@@ -46,8 +46,8 @@ document.getElementById("i_search").addEventListener("click", async () => {
     const arrInput = document.getElementById("i_arrival").value;
     const resultDiv = document.getElementById("i_result");
   
-    const airportsJSON = await fetchJSON('../i_fs/airports.json');
-    const routeData = await fetchJSON('../i_fs/route.json');
+    const airportsJSON = await fetchJSON('i_fs/airports.json');
+    const routeData = await fetchJSON('i_fs/route.json');
     if (!airportsJSON || !routeData) {
       resultDiv.innerText = "JSONファイルの読み込みに失敗しました";
       return;
