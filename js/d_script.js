@@ -246,30 +246,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const departureInputEl = document.getElementById('departure');
   const arrivalInputEl = document.getElementById('arrival');
 
-  // 入力フィールドに大文字化のイベントを追加
   const inputElements = document.querySelectorAll('#departure, #arrival');
 
   inputElements.forEach(input => {
     input.addEventListener('input', (event) => {
       const inputField = event.target;
       const currentValue = inputField.value;
-
-      // 現在の値を大文字に変換
+      const cursorPosition = inputField.selectionStart;
+  
+      // もし現在の値と大文字に変換した値が異なれば大文字化する
       const upperCaseValue = currentValue.toUpperCase();
-
-      // 現在の値がすでに大文字であれば何もしない
+  
       if (currentValue !== upperCaseValue) {
-        // 現在のカーソル位置を取得
-        const cursorPosition = inputField.selectionStart;
-        
-        // 値を大文字に変換
+        // 現在の値を大文字に変換
         inputField.value = upperCaseValue;
-        
-        // カーソル位置を戻す
-        inputField.setSelectionRange(cursorPosition, cursorPosition);
+  
+        // カーソル位置を保存
+        const diff = upperCaseValue.length - currentValue.length;
+        const newCursorPosition = cursorPosition + diff;
+  
+        // 新しいカーソル位置を設定
+        inputField.setSelectionRange(newCursorPosition, newCursorPosition);
       }
     });
   });
+  
 
   // 検索ボタンのクリックイベントと Enter キーイベントを登録
   const searchButton = document.getElementById('search');
