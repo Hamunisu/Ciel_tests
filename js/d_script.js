@@ -241,41 +241,31 @@ async function searchFlights() {
   resultDiv.innerHTML = `<p class="english">空港が見つかりませんでした</p>`;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  // 出発地・到着地の入力フィールド取得
-  const departureInput = document.getElementById('departure');
-  const arrivalInput   = document.getElementById('arrival');
-  const searchButton   = document.getElementById('search');
+ // 入力フィールド：大文字化＆Enterキー対応
+ ["departure", "arrival"].forEach(id => {
+  const input = document.getElementById(id);
 
-  // 大文字化＋Enterキー対応の共通処理
-  [departureInput, arrivalInput].forEach(input => {
-    if (!input) return;
-
-    // 大文字化（inputイベント）＋カーソル位置保持
-    input.addEventListener('input', e => {
+  input.addEventListener("input", e => {
+    // 現在の値を取得
+    const currentValue = e.target.value;
+    
+    // すでに大文字であれば何もしない
+    if (currentValue !== currentValue.toUpperCase()) {
       const start = e.target.selectionStart;
-      const end   = e.target.selectionEnd;
-      const value = e.target.value;
-      const upper = value.toUpperCase();
+      const end = e.target.selectionEnd;
 
-      if (value !== upper) {
-        e.target.value = upper;
-        e.target.setSelectionRange(start, end);
-      }
-    });
+      // 大文字に変換
+      e.target.value = currentValue.toUpperCase();
 
-    // Enterキーで検索実行
-    input.addEventListener('keydown', e => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        searchFlights();
-      }
-    });
+      // カーソル位置を復元
+      e.target.setSelectionRange(start, end);
+    }
   });
 
-  // 検索ボタンのクリックイベント
-  if (searchButton) {
-    searchButton.addEventListener('click', searchFlights);
-  }
+  input.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+      document.getElementById("search").click();
+    }
+  });
 });
 
