@@ -241,31 +241,28 @@ async function searchFlights() {
   resultDiv.innerHTML = `<p class="english">空港が見つかりませんでした</p>`;
 }
 
- // 入力フィールド：大文字化＆Enterキー対応
- ["departure", "arrival"].forEach(id => {
+["departure", "arrival"].forEach(id => {
   const input = document.getElementById(id);
+  if (!input) return;
 
   input.addEventListener("input", e => {
-    // 現在の値を取得
     const currentValue = e.target.value;
-    
-    // すでに大文字であれば何もしない
     if (currentValue !== currentValue.toUpperCase()) {
       const start = e.target.selectionStart;
       const end = e.target.selectionEnd;
 
-      // 大文字に変換
       e.target.value = currentValue.toUpperCase();
 
-      // カーソル位置を復元
       e.target.setSelectionRange(start, end);
     }
   });
 
   input.addEventListener("keydown", e => {
     if (e.key === "Enter") {
+      e.preventDefault();
       document.getElementById("search").click();
     }
   });
 });
+
 
