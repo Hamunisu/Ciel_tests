@@ -240,3 +240,50 @@ async function searchFlights() {
 
   resultDiv.innerHTML = `<p class="english">空港が見つかりませんでした</p>`;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 出発地、到着地の入力フィールド
+  const departureInputEl = document.getElementById('departure');
+  const arrivalInputEl = document.getElementById('arrival');
+
+  // 入力フィールドの大文字化処理
+  const inputElements = document.querySelectorAll('#departure, #arrival');
+  inputElements.forEach(input => {
+    input.addEventListener('input', (event) => {
+      const inputField = event.target;
+      const currentValue = inputField.value;
+
+      // 現在の値を大文字に変換
+      const upperCaseValue = currentValue.toUpperCase();
+
+      // すでに大文字なら何もしない
+      if (currentValue !== upperCaseValue) {
+        // 現在のカーソル位置を取得
+        const cursorPosition = inputField.selectionStart;
+
+        // 値を大文字に変換
+        inputField.value = upperCaseValue;
+
+        // カーソル位置を戻す
+        inputField.setSelectionRange(cursorPosition, cursorPosition);
+      }
+    });
+  });
+
+  // 検索ボタンのクリックイベント
+  const searchButton = document.getElementById('search');
+  if (searchButton) {
+    searchButton.addEventListener('click', searchFlights);
+  }
+
+  // Enterキーで検索処理
+  const handleEnterKey = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      searchFlights();
+    }
+  };
+
+  if (departureInputEl) departureInputEl.addEventListener('keydown', handleEnterKey);
+  if (arrivalInputEl) arrivalInputEl.addEventListener('keydown', handleEnterKey);
+});
