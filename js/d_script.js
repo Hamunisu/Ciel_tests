@@ -246,8 +246,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const departureInputEl = document.getElementById('departure');
   const arrivalInputEl = document.getElementById('arrival');
 
-  // 入力フィールドの大文字化処理
+  // 入力フィールドに大文字化のイベントを追加
   const inputElements = document.querySelectorAll('#departure, #arrival');
+
   inputElements.forEach(input => {
     input.addEventListener('input', (event) => {
       const inputField = event.target;
@@ -256,27 +257,27 @@ document.addEventListener('DOMContentLoaded', () => {
       // 現在の値を大文字に変換
       const upperCaseValue = currentValue.toUpperCase();
 
-      // すでに大文字なら何もしない
+      // 現在の値がすでに大文字であれば何もしない
       if (currentValue !== upperCaseValue) {
         // 現在のカーソル位置を取得
         const cursorPosition = inputField.selectionStart;
-
+        
         // 値を大文字に変換
         inputField.value = upperCaseValue;
-
+        
         // カーソル位置を戻す
         inputField.setSelectionRange(cursorPosition, cursorPosition);
       }
     });
   });
 
-  // 検索ボタンのクリックイベント
+  // 検索ボタンのクリックイベントと Enter キーイベントを登録
   const searchButton = document.getElementById('search');
+
   if (searchButton) {
     searchButton.addEventListener('click', searchFlights);
   }
 
-  // Enterキーで検索処理
   const handleEnterKey = (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
@@ -287,3 +288,4 @@ document.addEventListener('DOMContentLoaded', () => {
   if (departureInputEl) departureInputEl.addEventListener('keydown', handleEnterKey);
   if (arrivalInputEl) arrivalInputEl.addEventListener('keydown', handleEnterKey);
 });
+
