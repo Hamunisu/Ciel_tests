@@ -242,51 +242,40 @@ async function searchFlights() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 出発地、到着地の入力フィールド
-  const departureInputEl = document.getElementById('departure');
-  const arrivalInputEl = document.getElementById('arrival');
+  // 出発地・到着地の入力フィールド取得
+  const departureInput = document.getElementById('departure');
+  const arrivalInput   = document.getElementById('arrival');
+  const searchButton   = document.getElementById('search');
 
-  const inputElements = document.querySelectorAll('#departure, #arrival');
+  // 大文字化＋Enterキー対応の共通処理
+  [departureInput, arrivalInput].forEach(input => {
+    if (!input) return;
 
-  inputElements.forEach(input => {
-    input.addEventListener('input', (event) => {
-      const inputField = event.target;
-      const currentValue = inputField.value;
-      const cursorPosition = inputField.selectionStart;
-  
-      // もし現在の値と大文字に変換した値が異なれば大文字化する
-      const upperCaseValue = currentValue.toUpperCase();
-  
-      if (currentValue !== upperCaseValue) {
-        // 現在の値を大文字に変換
-        inputField.value = upperCaseValue;
-  
-        // カーソル位置を保存
-        const diff = upperCaseValue.length - currentValue.length;
-        const newCursorPosition = cursorPosition + diff;
-  
-        // 新しいカーソル位置を設定
-        inputField.setSelectionRange(newCursorPosition, newCursorPosition);
+    // 大文字化（inputイベント）＋カーソル位置保持
+    input.addEventListener('input', e => {
+      const start = e.target.selectionStart;
+      const end   = e.target.selectionEnd;
+      const value = e.target.value;
+      const upper = value.toUpperCase();
+
+      if (value !== upper) {
+        e.target.value = upper;
+        e.target.setSelectionRange(start, end);
+      }
+    });
+
+    // Enterキーで検索実行
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchFlights();
       }
     });
   });
-  
 
-  // 検索ボタンのクリックイベントと Enter キーイベントを登録
-  const searchButton = document.getElementById('search');
-
+  // 検索ボタンのクリックイベント
   if (searchButton) {
     searchButton.addEventListener('click', searchFlights);
   }
-
-  const handleEnterKey = (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      searchFlights();
-    }
-  };
-
-  if (departureInputEl) departureInputEl.addEventListener('keydown', handleEnterKey);
-  if (arrivalInputEl) arrivalInputEl.addEventListener('keydown', handleEnterKey);
 });
 
