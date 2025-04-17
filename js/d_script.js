@@ -247,22 +247,31 @@ async function searchFlights() {
 
   input.addEventListener("input", e => {
     const currentValue = e.target.value;
+    const start = e.target.selectionStart;  // カーソルの開始位置
+    const end = e.target.selectionEnd;      // カーソルの終了位置
+  
+    // 大文字に変換する
     if (currentValue !== currentValue.toUpperCase()) {
-      const start = e.target.selectionStart;
-      const end = e.target.selectionEnd;
-
+      // 入力中の値を大文字に変換
       e.target.value = currentValue.toUpperCase();
-
+      
+      // 変換後にカーソル位置を復元
+      setTimeout(() => {
+        e.target.setSelectionRange(start, end); // カーソル位置を復元
+      }, 0); // 少しだけ遅延をかけてカーソル位置を復元
+    } else {
+      // 大文字に変換された場合でもカーソル位置を復元
       e.target.setSelectionRange(start, end);
     }
   });
-
+  
   input.addEventListener("keydown", e => {
     if (e.key === "Enter") {
-      e.preventDefault();
-      document.getElementById("search").click();
+      e.preventDefault(); // Enterのデフォルト動作をキャンセル
+      document.getElementById("search").click(); // 確定ボタンのクリックイベント
     }
-  });
+  });  
 });
+
 
 
