@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ハンバーガーメニュー操作
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.menu');
   const overlay = document.querySelector('.overlay');
@@ -14,9 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.classList.remove('open');
     overlay.classList.remove('active');
   });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
+  // 国内・国際タブ切り替え
   const domesticBtn = document.getElementById('domesticBtn');
   const internationalBtn = document.getElementById('internationalBtn');
   const domesticContent = document.getElementById('domesticContent');
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     domesticContent.classList.remove('hidden');
     internationalContent.classList.add('hidden');
   });
-  
+
   internationalBtn.addEventListener('click', () => {
     internationalBtn.classList.add('active');
     domesticBtn.classList.remove('active');
@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     domesticContent.classList.add('hidden');
   });
 
+  // 国内・国際スワップボタン
   const domesticSwapButton = document.getElementById('domesticSwapButton');
   const departureInput = document.getElementById('departure');
   const arrivalInput = document.getElementById('arrival');
@@ -55,21 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
     iDepartureInput.value = iArrivalInput.value;
     iArrivalInput.value = tempInternational;
   });
-});
 
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter' && (document.activeElement.id === 'domesticSwapButton' || document.activeElement.id === 'internationalSwapButton')) {
-    event.preventDefault();
-  }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
+  // MSFS・X-Planeタブ切り替え
   const msfsBtn = document.getElementById('msfsBtn');
   const xplaneBtn = document.getElementById('xplaneBtn');
   const msfsContent = document.getElementById('msfsContent');
   const xplaneContent = document.getElementById('xplaneContent');
 
-  // MSFSタブ切り替え
   msfsBtn.addEventListener('click', () => {
     msfsBtn.classList.add('active');
     xplaneBtn.classList.remove('active');
@@ -77,11 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
     xplaneContent.classList.add('hidden');
   });
 
-  // X-planeタブ切り替え
   xplaneBtn.addEventListener('click', () => {
     xplaneBtn.classList.add('active');
     msfsBtn.classList.remove('active');
     xplaneContent.classList.remove('hidden');
     msfsContent.classList.add('hidden');
   });
+});
+
+// エンターキー無効化（スワップボタン）
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' && (document.activeElement.id === 'domesticSwapButton' || document.activeElement.id === 'internationalSwapButton')) {
+    event.preventDefault();
+  }
 });

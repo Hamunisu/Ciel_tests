@@ -28,7 +28,9 @@ body {
 
 header {
     display: flex;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -55,6 +57,37 @@ header {
     margin-left: 30px;
     align-items: center;
   }
+
+  .right-items  a {
+    position: relative;
+    margin: 0 15px;
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .right-items a::after {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: white;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+  }
+
+  .right-items a:hover {
+    color: white;
+  }
+  .right-items a:hover::after {
+    transform: scale(1, 1);
+    
+  }
+
+
 
   h1 {
     /* 文字を中心へ */
@@ -141,14 +174,47 @@ header {
 
 
 footer {
-    background-color: white;
+    background: #fff;
     padding: 25px;
     text-align: center;
     border-top: 1px solid #2f4f4f;
     margin-top: 25px;
   }
-
+  
   footer p {
-    color: black;
+    color: #000;
     font-size: 20px;
+  }
+  
+  .foot-container {
+    margin-top: 45px;
+  }
+  
+  .foot-container a {
+    position: relative;
+    margin: 0 15px;
+    color: black;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .foot-container a::after {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #1E88A8;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+  }
+
+  .foot-container a:hover {
+    color: #1E88A8;
+  }
+  .foot-container a:hover::after {
+    transform: scale(1, 1);
+    
   }

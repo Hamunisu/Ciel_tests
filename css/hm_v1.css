@@ -80,7 +80,7 @@
               right: 0;
               width: 17%;
               height: 100%;
-              background-color: #2f4f4f;
+              background: linear-gradient(to bottom, #212D5D, #1F2A50, #1B2542);
               display: flex;
               flex-direction: column;
               border-radius: 45px 0 0 45px;
@@ -128,24 +128,4 @@
               display: block;
             }
 
-            @media (max-width: 768px) {
-              .menu {
-                position: fixed;
-              margin-top: 75px;
-              top: 0;
-              right: 0;
-              width: 50%;
-              height: 100%;
-              background-color: #2f4f4f;
-              display: flex;
-              flex-direction: column;
-              border-radius: 45px 0 0 45px;
-              text-align: center;
-              align-items: flex;
-              justify-content: center;
-              transform: translateX(100%);
-              transition: transform 0.3s ease-in-out;
-              z-index: 10;
-              overflow: hidden;
-              }
-            }
+            

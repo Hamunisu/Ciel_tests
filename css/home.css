@@ -14,12 +14,6 @@ html {
     font-optical-sizing: auto;
 }
 
-header a {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    white-space: nowrap;
-}
 
 
 body {
@@ -28,7 +22,9 @@ body {
 
 header {
     display: flex;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -37,6 +33,13 @@ header {
     padding: 0 180px;
     z-index: 1001;
   }
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    white-space: nowrap;
+}
 
   .logo img {
     height: 55px;
@@ -56,12 +59,60 @@ header {
     align-items: center;
   }
 
+  .right-items  a {
+    position: relative;
+    margin: 0 15px;
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .right-items a::after {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: white;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+  }
+
+  .right-items a:hover {
+    color: white;
+  }
+  .right-items a:hover::after {
+    transform: scale(1, 1);
+    
+  }
+
+
    .switcher {
     display: flex;
     justify-content: center;
     margin-top: 100px;
     margin-bottom: 20px;
   } 
+
+  #domesticBtn  {
+    border-radius: 20px 0 0 20px;
+  }
+
+  #internationalBtn {
+    border-radius: 0 20px 20px 0;
+  }
+
+  #msfsBtn  {
+    border-radius: 20px 0 0 20px;
+  }
+
+  #xplaneBtn {
+    border-radius: 0 20px 20px 0;
+  }
+
+
   
   button {
     padding: 15px 100px;
@@ -291,14 +342,47 @@ header {
   
 
   footer {
-    background-color: white;
+    background: #fff;
     padding: 25px;
     text-align: center;
     border-top: 1px solid #2f4f4f;
     margin-top: 25px;
   }
-
+  
   footer p {
-    color: black;
+    color: #000;
     font-size: 20px;
+  }
+  
+  .foot-container {
+    margin-top: 45px;
+  }
+  
+  .foot-container a {
+    position: relative;
+    margin: 0 15px;
+    color: black;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .foot-container a::after {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #1E88A8;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+  }
+
+  .foot-container a:hover {
+    color: #1E88A8;
+  }
+  .foot-container a:hover::after {
+    transform: scale(1, 1);
+    
   }
