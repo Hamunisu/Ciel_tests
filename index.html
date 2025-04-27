@@ -41,6 +41,8 @@
 </head>
 
 <body>
+
+<!-- ヘッダー -->
   <header>
     <a href="index.html">
       <div class="logo">
@@ -58,28 +60,29 @@
         </div>
       </div>
   </header>
-  <!-- HM -->
-    <div class="overlay"></div>
-    <div class="menu">
-      <div class="menu-item english">
-        <a href="index.html">Home</a>
-      </div>
-      <div class="menu-item english">
-        <a href="html/gallery.html">Gallery</a>
-      </div>
-      <div class="menu-item english">
-        <a href="html/company.html">Company</a>
-      </div>
+
+<!-- HM -->
+  <div class="overlay"></div>
+  <div class="menu">
+    <div class="menu-item english">
+      <a href="index.html">Home</a>
     </div>
+    <div class="menu-item english">
+      <a href="html/gallery.html">Gallery</a>
+    </div>
+    <div class="menu-item english">
+      <a href="html/company.html">Company</a>
+    </div>
+  </div>
 
-
+<!-- 便名検索切り替え -->
   <div class="switcher english">
     <button id="domesticBtn" class="active">国内</button>
     <button id="internationalBtn">国際</button>
   </div>
 
 
-
+<!-- 国内線 -->
   <div id="domesticContent" class="content">
     <h2 class="english japanese">国内線</h2>
       <div class="box">
@@ -95,7 +98,7 @@
       </div>
   </div>      
       
-
+<!-- 国際線 -->
   <div id="internationalContent" class="content hidden">
     <h2 class="japanese english">international</h2>
     <div class="box">
@@ -111,12 +114,13 @@
     </div>
   </div>
 
-
+<!-- ルーレット切り替え -->
   <div class="switcher english">
     <button id="msfsBtn" class="active">MSFS</button>
     <button id="xplaneBtn">X-plane</button>
   </div>
 
+<!--ルーレット msfs  -->
   <div class="r_container english japanese">
     <div id="msfsContent">
     <div class="r_box">
@@ -129,6 +133,7 @@
   </div>
   </div>
 
+<!-- ルーレット x-plane -->
   <div class="r_container english japanese">
     <div id="xplaneContent">
     <div class="r_box">
@@ -141,6 +146,7 @@
   </div>
   </div>
 
+<!-- script -->
   <script src="js/script.js"></script>
   <script src="js/d_script.js"></script>
   <script src="js/i_script.js"></script>
@@ -149,16 +155,20 @@
       
       
       
-      
+<!-- フッター -->
   <footer>
     <p class="english">&copy; 2024-2025 Ciel Airlines.
     </p> 
-
+    <!-- 関連リンク -->
     <div class="foot-container">
       <a href="html/legal/legal_matters.html" class="english">法的事項について</a>
       <a href="html/legal/terms_of_use.html" class="english">利用規約について</a>
       <a href="html/legal/privacy.html" class="english">プライバシーポリシー</a>
       <a href="html/legal/license.html" class="english">ライセンス</a>
+    </div>
+    <!-- 架空明記 -->
+    <div class="virtual-container">
+      <p>当サイトに掲載されている航空会社名、便名などの情報は、Microsoft Flight SimulatorおよびX-Plane向けに制作された架空のものであり、実在の企業・団体とは一切関係ありません。</p>
     </div>
   </footer>
 </body>

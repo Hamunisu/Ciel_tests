@@ -248,3 +248,14 @@ footer p {
   transform: scale(1, 1);
   
 }
+
+.virtual-container {
+  width: 100%;
+  height: 20px;
+}
+
+.virtual-container p {
+  text-align: center;
+  font-size: 10px;
+  color: #6d6d6d;
+}
