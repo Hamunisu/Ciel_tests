@@ -1,50 +1,41 @@
-// 入力フィールドに大文字化のイベントを追加
-const inputElements = document.querySelectorAll('#departure, #arrival');
-
-inputElements.forEach(input => {
-  input.addEventListener('input', (event) => {
-    const inputField = event.target;
-    const currentValue = inputField.value;
-
-    // 現在の値を大文字に変換
-    const upperCaseValue = currentValue.toUpperCase();
-
-    // すでに大文字なら何もしない
-    if (currentValue !== upperCaseValue) {
-      // 現在のカーソル位置を取得
-      const cursorPosition = inputField.selectionStart;
-      
-      // 値を大文字に変換
-      inputField.value = upperCaseValue;
-      
-      // カーソル位置を戻す
-      inputField.setSelectionRange(cursorPosition, cursorPosition);
+// 大文字変換専用関数
+function setupUppercaseInput(input) {
+  input.addEventListener('beforeinput', (e) => {
+    if (e.isComposing) return; // 日本語変換中は無視
+    const inputType = e.inputType;
+    if (inputType === 'insertText' || inputType === 'insertReplacementText') {
+      const start = input.selectionStart;
+      const end = input.selectionEnd;
+      input.value = input.value.toUpperCase();
+      setTimeout(() => input.setSelectionRange(start, end), 0);
     }
   });
-});
+}
 
-// DOM コンテンツ読み込み時にイベントリスナーを登録
+// DOMコンテンツロード後にイベント登録
 document.addEventListener('DOMContentLoaded', () => {
+  const departureInput = document.getElementById('departure');
+  const arrivalInput = document.getElementById('arrival');
   const searchButton = document.getElementById('search');
-  const departureInputEl = document.getElementById('departure');
-  const arrivalInputEl = document.getElementById('arrival');
+
+  [departureInput, arrivalInput].forEach(input => {
+    if (input) {
+      setupUppercaseInput(input);
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          if (searchButton) searchButton.click();
+        }
+      });
+    }
+  });
 
   if (searchButton) {
     searchButton.addEventListener('click', searchFlights);
   }
-
-  const handleEnterKey = (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      searchFlights();
-    }
-  };
-
-  if (departureInputEl) departureInputEl.addEventListener('keydown', handleEnterKey);
-  if (arrivalInputEl) arrivalInputEl.addEventListener('keydown', handleEnterKey);
 });
 
-// 他の部分（空港チェック、フライト情報取得など）もそのまま利用
+// 空港チェック関数
 async function checkAirports(departure, arrival) {
   try {
     const response = await fetch('d_fs/airport_name.json');
@@ -57,6 +48,7 @@ async function checkAirports(departure, arrival) {
   }
 }
 
+// フライト情報取得関数
 async function fetchFlights(departureAirport) {
   let filePath;
   departureAirport = departureAirport.trim().toLowerCase();
@@ -180,7 +172,6 @@ async function fetchFlights(departureAirport) {
   }
 }
 
-// 検索処理
 async function searchFlights() {
   const departureInput = document.getElementById('departure').value.trim().toLowerCase();
   const arrivalInput   = document.getElementById('arrival').value.trim().toLowerCase();
@@ -189,7 +180,6 @@ async function searchFlights() {
 
   const flights = await fetchFlights(departureInput);
 
-  // 出発空港が無効の場合（fetchFlights が null を返す）
   if (flights === null) {
     resultDiv.innerHTML = `<p class="english">空港名が異なります</p>`;
     return;
@@ -218,8 +208,8 @@ async function searchFlights() {
         const orig    = departureInput.toUpperCase();
         const dest    = arrivalInput.toUpperCase();
         const simbriefURL = `https://dispatch.simbrief.com/options/custom?airline=${airline}&orig=${orig}&dest=${dest}`;
-        resultHtml = `<p class="english">臨時便に乗務する</p>
-                      <a href="${simbriefURL}" target="_blank" class="simbrief-link english japanese">臨時便を計画</a>`;
+        resultHtml = `<p class="english">臨時便に乗務する</p>` +
+                     `<a href="${simbriefURL}" target="_blank" class="simbrief-link english japanese">臨時便を計画</a>`;
         resultDiv.innerHTML = resultHtml;
         return;
       }
@@ -231,8 +221,8 @@ async function searchFlights() {
       const orig    = departureInput.toUpperCase();
       const dest    = arrivalInput.toUpperCase();
       const simbriefURL = `https://dispatch.simbrief.com/options/custom?airline=${airline}&orig=${orig}&dest=${dest}`;
-      resultHtml = `<p class="english">臨時便に乗務する</p>
-                    <a href="${simbriefURL}" target="_blank" class="simbrief-link english japanese">臨時便を計画</a>`;
+      resultHtml = `<p class="english">臨時便に乗務する</p>` +
+                   `<a href="${simbriefURL}" target="_blank" class="simbrief-link english japanese">臨時便を計画</a>`;
       resultDiv.innerHTML = resultHtml;
       return;
     }
@@ -241,12 +231,12 @@ async function searchFlights() {
   resultDiv.innerHTML = `<p class="english">空港が見つかりませんでした</p>`;
 }
 
+
 ["departure", "arrival"].forEach(id => {
   const input = document.getElementById(id);
   if (!input) return;
 
   input.addEventListener("input", e => {
-    // IME変換中なら処理をスキップ（特に日本語）
     if (e.isComposing) return;
 
     const currentValue = e.target.value;
@@ -255,8 +245,6 @@ async function searchFlights() {
 
     if (currentValue !== currentValue.toUpperCase()) {
       e.target.value = currentValue.toUpperCase();
-
-      // 遅延してカーソル復元（IME処理完了後）
       setTimeout(() => {
         e.target.setSelectionRange(start, end);
       }, 0);

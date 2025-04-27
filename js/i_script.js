@@ -54,15 +54,19 @@ document.getElementById("i_search").addEventListener("click", async () => {
     }
     const airports = airportsJSON.airports;
   
-    // 入力からICAOコードを取得（入力が既にICAOでも空港名でもOK）
+    // 入力からICAOコードを取得
     const depCode = getIcaoFromInput(depInput, airports);
     const arrCode = getIcaoFromInput(arrInput, airports);
   
-    // 出発地と到着地両方に「RJ」が含まれている場合、国内線で検索するように表示
-    if (depInput.includes("RJ") && arrInput.includes("RJ")) {
-      resultDiv.innerHTML = "<p class='english'>国内線で検索してください</p>";
-      return;  // 国内線で検索する場合はここで処理終了
-    }
+// 出発地と到着地両方に「RJ,RO」が含まれている場合
+if (
+  (depInput.includes("RJ") || depInput.includes("RO")) &&
+  (arrInput.includes("RJ") || arrInput.includes("RO"))
+) {
+  resultDiv.innerHTML = "<p class='english'>国内線でお調べください</p>";
+  return;処理終了
+}
+
   
     if (!depCode || !arrCode) {
       resultDiv.innerText = "入力された空港が見つかりません";
