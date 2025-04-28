@@ -38,6 +38,7 @@ header {
   height: 75px;
   background: linear-gradient(to bottom, #212D5D, #1F2A50, #1B2542);
   padding: 0 180px;
+  box-shadow: 0 10px 15px #6d6d6d;
   z-index: 1001;
 }
 
